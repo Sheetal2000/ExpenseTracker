@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.Example.ExpenseTracker.ui.MainController">
+
+    <!-- Input Fields -->
+    <HBox spacing="10">
+        <TextField fx:id="descriptionField" promptText="Description"/>
+        <TextField fx:id="amountField" promptText="Amount"/>
+        <ComboBox fx:id="categoryComboBox" editable="true" />
+    </HBox>
+
+    <!-- Buttons -->
+    <HBox spacing="10">
+        <Button text="Add Expense" onAction="#addExpense"/>
+        <Button text="Update Selected" onAction="#updateExpense"/>
+        <Button text="Delete Selected" onAction="#deleteExpense"/>
+        <Button text="View Analytics" onAction="#openAnalytics"/>
+        <Button text="Export as CSV" onAction="#exportCSV"/>
+        <Button text="Monthly Expenses Chart" onAction="#openMonthlyChart"/>
+
+    </HBox>
+
+    <!-- Expense Table -->
+    <TableView fx:id="expenseTable" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="150"/>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+</VBox>
